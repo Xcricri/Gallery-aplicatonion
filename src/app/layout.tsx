@@ -33,24 +33,25 @@ export default function RootLayout({
 }>) {
     return (
         <ClerkProvider>
-        <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <header className="flex justify-between items-center p-4 gap-4 h-16">
-                    <div className='flex gap-1'>
-                        <Link href="/"><h1>Hello World</h1></Link>
-                    </div>
-                    <div>
-                        <SignedOut>
-                            <SignInButton/>
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton/>
-                        </SignedIn>
-                    </div>
-                </header>
-            {children}
-            </body>
-        </html>
+            <html lang="en">
+                <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                    <header className="flex justify-between items-center p-4 gap-4 h-16">
+                        <div>
+                            <Link href="./pages">Gallery-aplication</Link>
+                        </div>
+                        <header>
+                            <SignedOut>
+                                <SignInButton/>
+                            </SignedOut>
+
+                            <SignedIn>
+                                <UserButton showName/>
+                            </SignedIn>
+                        </header>
+                    </header>
+                    {children}
+                </body>
+            </html>
         </ClerkProvider>
     )
 }
